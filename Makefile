@@ -17,4 +17,9 @@ test:
 	@echo "Running tests..."
 	@go test ./$(APPIDENTIFY_DIR)/...
 
-.PHONY: all build clean test
+tag:
+	@echo "Creating Git tag v1.0.0..."
+	@git tag -f v1.0.0 # Use -f to force update the tag
+	@git push origin v1.0.0 --force # Push the tag with --force
+
+.PHONY: all build clean test tag

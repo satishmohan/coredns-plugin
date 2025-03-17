@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"sync"
 
+	"github.com/coredns/caddy"
 	"github.com/coredns/coredns/plugin"
 	"github.com/miekg/dns"
 )
@@ -125,4 +126,28 @@ func startHTTPServer(a *AppIdentifyPlugin) {
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatalf("HTTP server failed: %v", err)
 	}
+}
+
+// setup is called by CoreDNS to initialize the plugin.
+func setup(c *caddy.Controller) error {
+	appDirectoryPath := "appidentify/applications.json" // Default path to the JSON file
+
+	// Initialize the plugin
+	_, err := Setup(appDirectoryPath)
+	if err != nil {
+		return err
+	}
+
+	// Register the plugin in the CoreDNS plugin chain
+	c.OnStartup(func() error {
+		log.Println("AppIdentify plugin setup complete")
+		return nil
+	})
+
+	c.OnShutdown(func() error {
+		log.Println("AppIdentify plugin shutting down")
+		return nil
+	})
+
+	return nil
 }
