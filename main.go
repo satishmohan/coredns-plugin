@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/coredns/caddy"
-	"github.com/samohan/coredns-plugin/appidentify"
+	"github.com/samohan/coredns-plugin/v1/appidentify"
 )
 
 func setup(c *caddy.Controller) error { // Corrected type to caddy.Controller

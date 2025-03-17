@@ -1,4 +1,4 @@
-module github.com/samohan/coredns-plugin
+module github.com/samohan/coredns-plugin/v1
 
 go 1.19
 
