@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/coredns/caddy"
-	"github.com/satishmohan/coredns-plugin/v1/appidentify" // Updated to match /v1 module path
+	"github.com/satishmohan/coredns-plugin/appidentify" // Updated to match /v1 module path
 )
 
 func setup(c *caddy.Controller) error {
