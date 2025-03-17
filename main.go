@@ -3,17 +3,22 @@ package main
 import (
 	"log"
 
-	"github.com/coredns/coredns/plugin"
+	"github.com/coredns/caddy"
 	"github.com/samohan/coredns-plugin/appidentify"
 )
 
-func setup(c *plugin.Controller) error {
-	plugin, err := appidentify.Setup("applications.json")
+func setup(c *caddy.Controller) error { // Corrected type to caddy.Controller
+	_, err := appidentify.Setup("appidentify/applications.json") // Updated path
 	if err != nil {
 		return err
 	}
 
-	c.Next = plugin
+	// Use plugin.Handler to chain plugins
+	c.OnStartup(func() error {
+		log.Println("AppIdentify plugin setup complete")
+		return nil
+	})
+
 	return nil
 }
 
