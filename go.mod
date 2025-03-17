@@ -1,4 +1,4 @@
-module github.com/samohan/coredns-plugin/v1
+module github.com/satishmohan/coredns-plugin/v1 // Updated to use /v1 for semantic versioning
 
 go 1.19
 
@@ -20,7 +20,6 @@ require (
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.39.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
-	github.com/satishmohan/coredns-plugin v0.0.0-20250316234719-31bfbe1fdb79 // indirect
 	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect

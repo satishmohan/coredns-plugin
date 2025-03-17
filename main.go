@@ -4,11 +4,11 @@ import (
 	"log"
 
 	"github.com/coredns/caddy"
-	"github.com/samohan/coredns-plugin/v1/appidentify"
+	"github.com/satishmohan/coredns-plugin/v1/appidentify" // Updated to match /v1 module path
 )
 
-func setup(c *caddy.Controller) error { // Corrected type to caddy.Controller
-	_, err := appidentify.Setup("appidentify/applications.json") // Updated path
+func setup(c *caddy.Controller) error {
+	_, err := appidentify.Setup("appidentify/applications.json")
 	if err != nil {
 		return err
 	}
