@@ -1,8 +1,9 @@
-module github.com/satishmohan/coredns-plugin/v1 // Updated to use /v1 for semantic versioning
+module github.com/satishmohan/coredns-plugin/v1
 
 go 1.19
 
 require (
+	github.com/coredns/caddy v1.1.1
 	github.com/coredns/coredns v1.10.1
 	github.com/miekg/dns v1.1.50
 )
@@ -11,7 +12,6 @@ require (
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
-	github.com/coredns/caddy v1.1.1 // indirect
 	github.com/flynn/go-shlex v0.0.0-20150515145356-3f9db97f8568 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
